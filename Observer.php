@@ -22,6 +22,9 @@ final class Observer implements ObserverInterface {
 			$rc = new RC('6LeakMMUAAAAANiYs8d8SuADmDXkJ7604rGE43po'); /** @var RC $rc */
 			$rc->setScoreThreshold(0.9);
 			df_assert($rc->verify($res = df_request('rwcCaptcha'))->isSuccess());
+			df_assert(!df_ends_with(df_request('email'), '.ru'));
+			df_assert_lt(40, mb_strlen(df_request('firstname')));
+			df_assert_lt(40, mb_strlen(df_request('lastname')));
 		}
 		catch (\Exception $e) {
 			df_message_error('reCAPTCHA validation failed.');
