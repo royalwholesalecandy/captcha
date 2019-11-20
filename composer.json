@@ -1,0 +1,17 @@
+{
+	"name": "royalwholesalecandy/captcha"
+	,"version": "0.0.1"
+	,"description": "reCAPTCHA v3 for royalwholesalecandy.com (Magento 2)"
+	,"type": "magento2-module"
+	,"homepage": "https://github.com/royalwholesalecandy/captcha"
+	,"license": "MIT"
+	,"authors": [{
+		"name": "Dmitry Fedyuk"
+		,"email": "admin@mage2.pro"
+		,"homepage": "https://mage2.pro/users/dmitry_fedyuk"
+		,"role": "Developer"
+	}]
+	,"require": {"mage2pro/core": ">=5.5.3"}
+	,"autoload": {"files": ["registration.php"], "psr-4": {"RWCandy\\Captcha\\": ""}}
+	,"keywords": ["Magento 2"]
+}
