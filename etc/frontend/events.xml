@@ -5,6 +5,15 @@
 >
 <!-- 2019-11-21 -->
 	<event name='controller_action_predispatch_customer_account_createpost'>
-		<observer instance='RWCandy\Captcha\Observer' name='RWCandy\Captcha\Observer'/>
+		<observer
+			instance='RWCandy\Captcha\Observer\CustomerAccountCreatePost'
+			name='RWCandy\Captcha\Observer\CustomerAccountCreatePost'
+		/>
+	</event>
+	<event name='customer_save_before'>
+		<observer
+			instance='RWCandy\Captcha\Observer\CustomerSaveBefore'
+			name='RWCandy\Captcha\Observer\CustomerSaveBefore'
+		/>
 	</event>
 </config>
