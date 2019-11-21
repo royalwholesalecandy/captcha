@@ -8,6 +8,7 @@ namespace RWCandy\Captcha\Observer;
 use Magento\Framework\Event\Observer as O;
 use Magento\Framework\Event\ObserverInterface;
 use ReCaptcha\ReCaptcha as RC;
+use RWCandy\Captcha\Assert as A;
 final class CustomerAccountCreatePost implements ObserverInterface {
 	/**
 	 * 2019-11-21
@@ -21,10 +22,10 @@ final class CustomerAccountCreatePost implements ObserverInterface {
 		try {
 			$rc = new RC('6LeakMMUAAAAANiYs8d8SuADmDXkJ7604rGE43po'); /** @var RC $rc */
 			$rc->setScoreThreshold(0.9);
-			//df_assert($rc->verify($res = df_request('rwcCaptcha'))->isSuccess());
-			/*df_assert(!df_ends_with(df_request('email'), '.ru'));
-			df_assert_lt(40, mb_strlen(df_request('firstname')));
-			df_assert_lt(40, mb_strlen(df_request('lastname')));*/
+			df_assert($rc->verify($res = df_request('rwcCaptcha'))->isSuccess());
+			A::email(df_request('email'));
+			A::name(df_request('firstname'));
+			A::name(df_request('lastname'));
 		}
 		catch (\Exception $e) {
 			df_message_error('reCAPTCHA validation failed.');

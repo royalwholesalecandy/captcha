@@ -8,6 +8,7 @@ namespace RWCandy\Captcha\Observer;
 use Magento\Customer\Model\Customer as C;
 use Magento\Framework\Event\Observer as O;
 use Magento\Framework\Event\ObserverInterface;
+use RWCandy\Captcha\Assert as A;
 final class CustomerSaveBefore implements ObserverInterface {
 	/**
 	 * 2019-11-21
@@ -23,9 +24,9 @@ final class CustomerSaveBefore implements ObserverInterface {
 	function execute(O $o) {
 		try {
 			$c = $o['customer']; /** @var C $c */
-			df_assert(!df_ends_with($c->getEmail(), '.ru'));
-			df_assert_lt(40, mb_strlen($c['firstname']));
-			df_assert_lt(40, mb_strlen($c['lastname']));
+			A::email($c->getEmail());
+			A::name($c['firstname']);
+			A::name($c['lastname']);
 		}
 		catch (\Exception $e) {
 			df_error('The customer is a bot.');
