@@ -22,7 +22,7 @@ final class CustomerAccountCreatePost implements ObserverInterface {
 		try {
 			$rc = new RC('6LeakMMUAAAAANiYs8d8SuADmDXkJ7604rGE43po'); /** @var RC $rc */
 			$rc->setScoreThreshold(0.9);
-			df_assert($rc->verify($res = df_request('rwcCaptcha'))->isSuccess());
+			df_assert($rc->verify($res = df_request('rwcCaptcha'))->isSuccess(), '');
 			A::email(df_request('email'));
 			A::name(df_request('firstname'));
 			A::name(df_request('lastname'));

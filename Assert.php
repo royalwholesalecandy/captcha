@@ -10,7 +10,7 @@ final class Assert {
 	 * @param string $v
 	 * @throws DFE
 	 */
-	static function email($v) {df_assert(!df_ends_with($v, '.ru'));}
+	static function email($v) {df_assert(!df_ends_with($v, '.ru'), '');}
 
 	/**
 	 * 2019-11-21
@@ -22,6 +22,6 @@ final class Assert {
 	static function name($v) {
 		df_assert_lt(40, mb_strlen($v));
 		df_assert_lt(40, mb_strlen($v));
-		df_assert(!df_contains($v, '.ru'));
+		df_assert(!df_contains($v, '.ru'), '');
 	}
 }

@@ -1,6 +1,6 @@
 {
 	"name": "royalwholesalecandy/captcha"
-	,"version": "0.0.6"
+	,"version": "0.0.7"
 	,"description": "reCAPTCHA v3 for royalwholesalecandy.com (Magento 2)"
 	,"type": "magento2-module"
 	,"homepage": "https://github.com/royalwholesalecandy/captcha"
