@@ -1,14 +1,14 @@
 <?php
-/**
- * 2019-11-21 «customer_save_before».
- * @used-by \Magento\Framework\Model\AbstractModel::beforeSave():
- *	$this->_eventManager->dispatch($this->_eventPrefix . '_save_before', $this->_getEventData());
- */
 namespace RWCandy\Captcha\Observer;
 use Magento\Customer\Model\Customer as C;
 use Magento\Framework\Event\Observer as O;
 use Magento\Framework\Event\ObserverInterface;
 use RWCandy\Captcha\Assert as A;
+/**
+ * 2019-11-21 `customer_save_before`
+ * @used-by \Magento\Framework\Model\AbstractModel::beforeSave():
+ *	$this->_eventManager->dispatch($this->_eventPrefix . '_save_before', $this->_getEventData());
+ */
 final class CustomerSaveBefore implements ObserverInterface {
 	/**
 	 * 2019-11-21

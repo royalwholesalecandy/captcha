@@ -1,14 +1,14 @@
 <?php
-/**
- * 2019-11-21 «controller_action_predispatch_customer_account_createpost».
- * @used-by \Magento\Framework\App\Action\Action::dispatch():
- *	$this->_eventManager->dispatch('controller_action_predispatch_' . $request->getFullActionName(), $eventParameters);
- */
 namespace RWCandy\Captcha\Observer;
 use Magento\Framework\Event\Observer as O;
 use Magento\Framework\Event\ObserverInterface;
 use ReCaptcha\ReCaptcha as RC;
 use RWCandy\Captcha\Assert as A;
+/**
+ * 2019-11-21 `controller_action_predispatch_customer_account_createpost`
+ * @used-by \Magento\Framework\App\Action\Action::dispatch():
+ *	$this->_eventManager->dispatch('controller_action_predispatch_' . $request->getFullActionName(), $eventParameters);
+ */
 final class CustomerAccountCreatePost implements ObserverInterface {
 	/**
 	 * 2019-11-21
