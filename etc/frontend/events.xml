@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <config
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd"
+	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:noNamespaceSchemaLocation='urn:magento:framework:Event/etc/events.xsd'
 >
 <!-- 2019-11-21 -->
 	<event name='controller_action_predispatch_customer_account_createpost'>
@@ -12,8 +12,7 @@
 	</event>
 	<event name='customer_save_before'>
 		<observer
-			instance='RWCandy\Captcha\Observer\CustomerSaveBefore'
-			name='RWCandy\Captcha\Observer\CustomerSaveBefore'
+			instance='RWCandy\Captcha\Observer\CustomerSaveBefore' name='RWCandy\Captcha\Observer\CustomerSaveBefore'
 		/>
 	</event>
 </config>
